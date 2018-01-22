@@ -12,8 +12,8 @@ def main():
     # run_test_triangle_right_justified()
     # run_test_triangle_upside_down()
     # run_test_vee()
-    run_test_numbers_constant_forward()
-    # run_test_numbers_constant_backwards()
+    # run_test_numbers_constant_forward()
+    run_test_numbers_constant_backwards()
     # run_test_numbers_increasing_forward()
 
 
@@ -291,7 +291,7 @@ def numbers_constant_backwards(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -299,6 +299,13 @@ def numbers_constant_backwards(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+
+    for h in range(r):
+        for i in range(maxnum):
+            for j in range(n):
+                print(maxnum - i, end="")
+            print(" ", end="")
+        print()
 
 
 def run_test_numbers_increasing_forward():
