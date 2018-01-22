@@ -11,8 +11,8 @@ def main():
     """ Calls the other functions to test them. """
     # run_test_triangle_right_justified()
     # run_test_triangle_upside_down()
-    run_test_vee()
-    # run_test_numbers_constant_forward()
+    # run_test_vee()
+    run_test_numbers_constant_forward()
     # run_test_numbers_constant_backwards()
     # run_test_numbers_increasing_forward()
 
@@ -194,7 +194,6 @@ def vee(r):
         print()
 
 
-
 def run_test_numbers_constant_forward():
     """ Tests the    numbers_constant_forward    function. """
     print()
@@ -241,7 +240,7 @@ def numbers_constant_forward(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: What loop structure do you need for this problem?
@@ -251,6 +250,13 @@ def numbers_constant_forward(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+
+    for h in range(r):
+        for i in range(maxnum):
+            for j in range(n):
+                print(i + 1, end="")
+            print(" ", end="")
+        print()
 
 
 def run_test_numbers_constant_backwards():
