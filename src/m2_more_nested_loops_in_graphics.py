@@ -22,8 +22,8 @@ def run_test_draw_upside_down_wall():
     rectangle = rg.Rectangle(rg.Point(125, 230), rg.Point(155, 250))
     draw_upside_down_wall(rectangle, 8, window)
 
-    # rectangle = rg.Rectangle(rg.Point(375, 175), rg.Point(425, 225))
-    # draw_upside_down_wall(rectangle, 4, window)
+    rectangle = rg.Rectangle(rg.Point(375, 175), rg.Point(425, 225))
+    draw_upside_down_wall(rectangle, 4, window)
 
     window.close_on_mouse_click()
 
@@ -49,25 +49,27 @@ def draw_upside_down_wall(rectangle, n, window):
     and n is nonnegative.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     Some tests are already written for you (above).
     # ------------------------------------------------------------------
 
     original_corner_1 = rectangle.corner_1
-    corner_1 = original_corner_1
+    corner_1 = rg.Point(original_corner_1.x, original_corner_1.y)
     width = rectangle.get_width()
     height = rectangle.get_height()
     corner_2 = rectangle.corner_2
 
     for h in range(n):
-        for i in range(n - h):
-            corner_2.x = corner_1.x + ((i + 1) * width)
-            corner_2.y = corner_1.y + ((i + 1) * height)
+        for i in range(h + 1):
+            corner_2.x = corner_1.x + width
+            corner_2.y = corner_1.y + height
             new_rectangle = rg.Rectangle(corner_1, corner_2)
             new_rectangle.attach_to(window)
             window.render()
-        corner_1.x = original_corner_1.x - (width / 2)
-        corner_1.y = original_corner_1.y + (h + 1) * height
+            corner_1.x = corner_1.x + width
+        corner_1.x = original_corner_1.x - (width / 2) * (h + 1)
+        corner_1.y = corner_1.y - height
+
 
 
 # ----------------------------------------------------------------------
