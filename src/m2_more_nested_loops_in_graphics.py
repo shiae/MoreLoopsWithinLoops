@@ -71,7 +71,6 @@ def draw_upside_down_wall(rectangle, n, window):
         corner_1.y = corner_1.y - height
 
 
-
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
