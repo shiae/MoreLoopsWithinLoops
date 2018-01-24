@@ -141,6 +141,19 @@ def largest_negative_number(seq_seq):
     #   give sequence of sequences plus any non-list variables you want).
     # ------------------------------------------------------------------
 
+    largest =
+
+    for h in range(len(seq_seq)):
+        seq = seq_seq[h]
+        for i in range(len(seq)):
+            if seq[i] < 0:
+                if seq[i] > largest:
+                    largest = seq[i]
+
+
+    return largest
+
+
 
 def run_test_first_is_elsewhere_too():
     """ Tests the    first_is_elsewhere_too    function. """
