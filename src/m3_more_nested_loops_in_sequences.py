@@ -81,16 +81,17 @@ def largest_number(seq_seq):
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
-    largest = seq_seq[0][0]
+    largest = 0
 
     for h in range(len(seq_seq)):
-        for i in range(len(seq_seq[h])):
-            if seq_seq[h][i] > largest:
-                largest = seq_seq[h][i]
-            if seq_seq[h][i] <= largest:
-                largest = largest
-            else:
-                return None
+        seq = seq_seq[h]
+        for i in range(len(seq) - 1):
+            if seq[i] > seq[i + 1]:
+                largest = seq[i]
+            # elif seq[i + 1] <= seq[i]:
+                # largest = seq[i]
+            elif seq[i] == []:
+                largest = None
     return largest
 
 
