@@ -9,9 +9,9 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 def main():
     """ Calls the other functions to test them. """
-    run_test_largest_number()
+    # run_test_largest_number()
     # run_test_largest_negative_number()
-    # run_test_first_is_elsewhere_too()
+    run_test_first_is_elsewhere_too()
 
 
 def run_test_largest_number():
@@ -161,7 +161,7 @@ def largest_negative_number(seq_seq):
     #   give sequence of sequences plus any non-list variables you want).
     # ------------------------------------------------------------------
 
-    largest = 0
+    largest = seq_seq[0][0]
 
     for h in range(len(seq_seq)):
         seq = seq_seq[h]
@@ -171,7 +171,6 @@ def largest_negative_number(seq_seq):
                     largest = seq[i]
             else:
                 largest = None
-
         return largest
 
 
@@ -406,7 +405,7 @@ def first_is_elsewhere_too(seq_seq):
     and the given argument is a sequence of sequences.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -421,6 +420,16 @@ def first_is_elsewhere_too(seq_seq):
     #   in this problem, as doing so would defeat the goal of providing
     #   practice at loops within loops (within loops within ...)
     # ------------------------------------------------------------------
+
+    for h in range(len(seq_seq[0])):
+        number = seq_seq[0][h]
+        for i in range(len(seq_seq) - 1):
+            sub = seq_seq[i + 1]
+            for j in range(len(sub)):
+                if sub[j] == number:
+                    return True
+    return False
+
 
 
 # ----------------------------------------------------------------------
