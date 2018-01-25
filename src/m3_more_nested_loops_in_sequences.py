@@ -10,8 +10,8 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 def main():
     """ Calls the other functions to test them. """
     # run_test_largest_number()
-    # run_test_largest_negative_number()
-    run_test_first_is_elsewhere_too()
+    run_test_largest_negative_number()
+    # run_test_first_is_elsewhere_too()
 
 
 def run_test_largest_number():
@@ -81,13 +81,15 @@ def largest_number(seq_seq):
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
-    largest = seq_seq[0][0]
+    largest = None
 
     for h in range(len(seq_seq)):
         seq = seq_seq[h]
-        for i in range(len(seq)):
-            if seq[i] > largest:
+        for i in range(len(seq) - 1):
+            if seq[i] > seq[i + 1]:
                 largest = seq[i]
+            else:
+                largest = seq[i + 1]
     return largest
 
 
@@ -161,16 +163,13 @@ def largest_negative_number(seq_seq):
     #   give sequence of sequences plus any non-list variables you want).
     # ------------------------------------------------------------------
 
-    largest = seq_seq[0][0]
-
+    largest = None
     for h in range(len(seq_seq)):
         seq = seq_seq[h]
         for i in range(len(seq) - 1):
             if seq[i] < 0:
-                if seq[i] > largest:
+                if seq[i] > seq[i + 1]:
                     largest = seq[i]
-            else:
-                largest = None
         return largest
 
 
@@ -429,7 +428,6 @@ def first_is_elsewhere_too(seq_seq):
                 if sub[j] == number:
                     return True
     return False
-
 
 
 # ----------------------------------------------------------------------
