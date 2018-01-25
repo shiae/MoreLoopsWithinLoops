@@ -81,17 +81,13 @@ def largest_number(seq_seq):
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
-    largest = 0
+    largest = seq_seq[0][0]
 
     for h in range(len(seq_seq)):
         seq = seq_seq[h]
-        for i in range(len(seq) - 1):
-            if seq[i] == []:
-                largest = None
-            elif seq[i] > seq[i + 1]:
+        for i in range(len(seq)):
+            if seq[i] > largest:
                 largest = seq[i]
-            else:
-                largest = seq[i + 1]
     return largest
 
 
@@ -171,7 +167,7 @@ def largest_negative_number(seq_seq):
         seq = seq_seq[h]
         for i in range(len(seq) - 1):
             if seq[i] < 0:
-                if seq[i] > seq[i + 1]:
+                if seq[i] > largest:
                     largest = seq[i]
             else:
                 largest = None
