@@ -9,8 +9,8 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 def main():
     """ Calls the other functions to test them. """
-    # run_test_largest_number()
-    run_test_largest_negative_number()
+    run_test_largest_number()
+    # run_test_largest_negative_number()
     # run_test_first_is_elsewhere_too()
 
 
