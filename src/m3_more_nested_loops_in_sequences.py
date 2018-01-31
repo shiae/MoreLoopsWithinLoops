@@ -9,8 +9,8 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 def main():
     """ Calls the other functions to test them. """
-    run_test_largest_number()
-    # run_test_largest_negative_number()
+    # run_test_largest_number()
+    run_test_largest_negative_number()
     # run_test_first_is_elsewhere_too()
 
 
@@ -77,7 +77,7 @@ def largest_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
@@ -155,7 +155,7 @@ def largest_negative_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # CHALLENGE: Try to solve this problem with no additional sequences
@@ -166,11 +166,13 @@ def largest_negative_number(seq_seq):
     largest = None
     for h in range(len(seq_seq)):
         seq = seq_seq[h]
-        for i in range(len(seq) - 1):
+        for i in range(len(seq)):
             if seq[i] < 0:
-                if seq[i] > seq[i + 1]:
+                if largest is None:
                     largest = seq[i]
-        return largest
+                if seq[i] > largest:
+                    largest = seq[i]
+    return largest
 
 
 def run_test_first_is_elsewhere_too():
