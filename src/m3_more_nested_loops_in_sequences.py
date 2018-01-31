@@ -9,8 +9,8 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 def main():
     """ Calls the other functions to test them. """
-    # run_test_largest_number()
-    run_test_largest_negative_number()
+    run_test_largest_number()
+    # run_test_largest_negative_number()
     # run_test_first_is_elsewhere_too()
 
 
@@ -85,11 +85,11 @@ def largest_number(seq_seq):
 
     for h in range(len(seq_seq)):
         seq = seq_seq[h]
-        for i in range(len(seq) - 1):
-            if seq[i] > seq[i + 1]:
+        for i in range(len(seq)):
+            if largest is None:
                 largest = seq[i]
-            else:
-                largest = seq[i + 1]
+            if seq[i] > largest:
+                largest = seq[i]
     return largest
 
 
